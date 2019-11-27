@@ -1,0 +1,18 @@
+{
+  "name": "@mathrix-education/education-api-sdk",
+  "version": "1.0.0",
+  "description": "Mathrix official api SDK",
+  "private": false,
+  "homepage": "https://github.com/mathrix-education/education-api-sdk",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/mathrix-education/education-api-sdk"
+  },
+  "dependencies": {
+    "ts-essentials": "3.0.2",
+    "@mathrix-education/iridium": "1.0.0-dev-7909d58"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
+}
