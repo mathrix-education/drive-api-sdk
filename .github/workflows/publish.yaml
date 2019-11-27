@@ -4,13 +4,12 @@ on:
     branches:
       - master
       - dev
-      - 'dims/endpoints'
 jobs:
   build:
     strategy:
       matrix:
         lib:
-          - education-api-sdk
+          - drive-api-sdk
     runs-on: ubuntu-latest
     steps:
       - name: Checkout sources

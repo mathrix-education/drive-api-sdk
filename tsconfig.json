@@ -19,11 +19,11 @@
       "dom"
     ],
     "paths": {
-      "education-api-sdk": [
-        "dist/education-api-sdk"
+      "drive-api-sdk": [
+        "dist/drive-api-sdk"
       ],
-      "education-api-sdk/*": [
-        "dist/education-api-sdk/*"
+      "drive-api-sdk/*": [
+        "dist/drive-api-sdk/*"
       ]
     }
   },

@@ -1,7 +1,7 @@
 import {TestBed} from '@angular/core/testing';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 import {UsersEndpoint} from '../endpoints/users.endpoint';
-import {EducationAPISDKModule} from '../education-api-sdk.module';
+import {EducationAPISDKModule} from '../drive-api-sdk.module';
 import {environment} from '../../environment';
 
 describe('UsersEndpoint', () => {

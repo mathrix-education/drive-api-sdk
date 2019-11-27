@@ -8,10 +8,10 @@ import {AuthTokenName, BaseUrl, IridiumModule} from '@mathrix-education/iridium'
   }
 )
 
-export class EducationAPISDKModule {
+export class DriveApiSdkModule {
   static withConfig(config: { authTokenName: string, baseUrl: string }): ModuleWithProviders {
     return {
-      ngModule: EducationAPISDKModule,
+      ngModule: DriveApiSdkModule,
       providers: [
         {provide: BaseUrl, useValue: config.baseUrl},
         {provide: AuthTokenName, useValue: config.authTokenName},

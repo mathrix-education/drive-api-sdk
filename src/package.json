@@ -1,12 +1,12 @@
 {
-  "name": "@mathrix-education/education-api-sdk",
+  "name": "@mathrix-education/drive-api-sdk",
   "version": "1.0.0",
   "description": "Mathrix official api SDK",
   "private": false,
-  "homepage": "https://github.com/mathrix-education/education-api-sdk",
+  "homepage": "https://github.com/mathrix-education/drive-api-sdk",
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com/mathrix-education/education-api-sdk"
+    "url": "ssh://git@github.com/mathrix-education/drive-api-sdk"
   },
   "dependencies": {
     "ts-essentials": "3.0.2",

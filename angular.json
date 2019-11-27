@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "",
   "projects": {
-    "education-api-sdk": {
+    "drive-api-sdk": {
       "projectType": "library",
       "root": "",
       "sourceRoot": "src",
@@ -37,5 +37,5 @@
       }
     }
   },
-  "defaultProject": "education-api-sdk"
+  "defaultProject": "drive-api-sdk"
 }
