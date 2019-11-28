@@ -2,6 +2,10 @@ import {HttpClient} from '@angular/common/http';
 import {Inject, Injectable} from '@angular/core';
 import {BaseUrl, Create, Endpoint, ListOptions, ReadOptions, UpdateOptions} from '@mathrix-education/iridium';
 import {Topic} from '../models/topic';
+import {Observable} from "rxjs";
+import {Course} from "../models/course";
+import {Question} from "../models/question";
+import {Theme} from "../models/theme";
 
 /**
  * /topics endpoint.
@@ -55,6 +59,6 @@ export class TopicsEndpoint extends Endpoint<Topic> {
    * @param relation the relation.
    */
   related(topicId: number, relation: 'courses' | 'questions' | 'theme') {
-    return this.defaultRelationList(topicId, relation);
+    return this.defaultRelationList<Course | Question | Theme>(topicId, relation);
   }
 }

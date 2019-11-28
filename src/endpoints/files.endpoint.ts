@@ -2,6 +2,7 @@ import {Inject, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {BaseUrl, DataResponse} from '@mathrix-education/iridium';
 import {Directory} from '../models/directory';
+import {FileInterface} from '../models/file';
 
 /**
  * /Files endpoint.
@@ -21,7 +22,7 @@ export class FilesEndpoint {
    * List the products.
    */
   list(directory: string) {
-    return this.http.get<DataResponse<Directory | File>>(`${this.url}/list/${directory}`);
+    return this.http.get<DataResponse<Directory | FileInterface>>(`${this.url}/list/${directory}`);
   }
 
   /**
@@ -31,7 +32,7 @@ export class FilesEndpoint {
   create(file: File, url: string) {
     const formData = new FormData();
     formData.append('file', file);
-    return this.http.post<DataResponse<File>>(`${this.url}/${url}`, formData);
+    return this.http.post<DataResponse<FileInterface>>(`${this.url}/${url}`, formData);
   }
 
   /**
