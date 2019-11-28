@@ -35,7 +35,7 @@ export class QuestionsEndpoint extends Endpoint<Question> {
    * @param questionsId The questions id.
    * @param options The read questions request options.
    */
-  read(questionsId: number, options: ReadOptions<Question>) {
+  read(questionsId: number, options?: ReadOptions<Question>) {
     return this.defaultRead(questionsId, options);
   }
 
@@ -45,7 +45,7 @@ export class QuestionsEndpoint extends Endpoint<Question> {
    * @param questions The questions model.
    * @param options The update questions request options.
    */
-  update(questionsId: number, questions: Question, options: UpdateOptions<Question>) {
+  update(questionsId: number, questions: Question, options?: UpdateOptions<Question>) {
     return this.defaultUpdate(questionsId, questions, options);
   }
 }

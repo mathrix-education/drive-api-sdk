@@ -19,7 +19,7 @@ export class UsersEndpoint extends Endpoint<User> {
    * GET /users
    * @param options The list user request options.
    */
-  list(options: ListOptions<User>) {
+  list(options?: ListOptions<User>) {
     return this.defaultList(options);
   }
 

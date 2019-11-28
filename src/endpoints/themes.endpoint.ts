@@ -35,7 +35,7 @@ export class ThemesEndpoint extends Endpoint<Theme> {
    * @param themesId The themes id.
    * @param options The read themes request options.
    */
-  read(themesId: number, options: ReadOptions<Theme>) {
+  read(themesId: number, options?: ReadOptions<Theme>) {
     return this.defaultRead(themesId, options);
   }
 
@@ -45,7 +45,7 @@ export class ThemesEndpoint extends Endpoint<Theme> {
    * @param themes The themes model.
    * @param options The update themes request options.
    */
-  update(themesId: number, themes: Theme, options: UpdateOptions<Theme>) {
+  update(themesId: number, themes: Theme, options?: UpdateOptions<Theme>) {
     return this.defaultUpdate(themesId, themes, options);
   }
 

@@ -35,7 +35,7 @@ export class TopicsEndpoint extends Endpoint<Topic> {
    * @param topicsId The topics id.
    * @param options The read topics request options.
    */
-  read(topicsId: number, options: ReadOptions<Topic>) {
+  read(topicsId: number, options?: ReadOptions<Topic>) {
     return this.defaultRead(topicsId, options);
   }
 
@@ -45,7 +45,7 @@ export class TopicsEndpoint extends Endpoint<Topic> {
    * @param topics The topics model.
    * @param options The update topics request options.
    */
-  update(topicsId: number, topics: Topic, options: UpdateOptions<Topic>) {
+  update(topicsId: number, topics: Topic, options?: UpdateOptions<Topic>) {
     return this.defaultUpdate(topicsId, topics, options);
   }
 

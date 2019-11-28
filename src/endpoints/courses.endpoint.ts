@@ -35,7 +35,7 @@ export class CoursesEndpoint extends Endpoint<Course> {
    * @param coursesId The courses id.
    * @param options The read courses request options.
    */
-  read(coursesId: number, options: ReadOptions<Course>) {
+  read(coursesId: number, options?: ReadOptions<Course>) {
     return this.defaultRead(coursesId, options);
   }
 
@@ -45,7 +45,7 @@ export class CoursesEndpoint extends Endpoint<Course> {
    * @param courses The courses model.
    * @param options The update courses request options.
    */
-  update(coursesId: number, courses: Course, options: UpdateOptions<Course>) {
+  update(coursesId: number, courses: Course, options?: UpdateOptions<Course>) {
     return this.defaultUpdate(coursesId, courses, options);
   }
 
