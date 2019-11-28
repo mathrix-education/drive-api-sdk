@@ -4,5 +4,5 @@ export interface Topic extends ModelWithDates {
   name: string;
   slug: string;
   order: number;
-  theme_id: string;
+  theme_id: number;
 }

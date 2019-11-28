@@ -53,7 +53,7 @@ export class ThemesEndpoint extends Endpoint<Theme> {
    * GET /themes/{themeId}/topics
    * @param themeId The theme id.
    */
-  relatedTopics(themeId: string) {
+  relatedTopics(themeId: number) {
     return this.defaultRelationList(themeId, 'topics');
   }
 }

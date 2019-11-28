@@ -8,7 +8,7 @@ export interface Question extends ModelWithDatesOrder<number> {
   situational: boolean;
   questions: questions<1> | questions<2>;
   choices: string[];
-  correct_choices: string[];
+  correct_choices: number[];
   media: string;
   correction_sound: string;
   correction: any[];
