@@ -1,9 +1,7 @@
-import {Model} from '@mathrix-education/iridium';
-
 // tslint:disable:variable-name
 
 
-export interface Directory extends Model<string> {
+export interface Directory {
   type: 'dir';
   basename: string;
   dirname: string;

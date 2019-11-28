@@ -4,7 +4,7 @@ import {Model} from '@mathrix-education/iridium';
 
 export type MimeType = 'application/pdf' | 'image/gif' | 'image/jpeg' | 'image/svg+xml' | 'image/png' | 'video/mp4';
 
-export interface FileInterface extends Model<string> {
+export interface FileInterface {
   type: 'file';
   basename: string;
   dirname: string;
