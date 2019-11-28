@@ -10,9 +10,3 @@ export interface User extends ModelWithDates<number> {
   password: string;
   scopes: string[];
 }
-
-export interface CreateUser {
-  username: string;
-  email: string;
-  password: string;
-}
