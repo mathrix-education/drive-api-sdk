@@ -11,6 +11,7 @@ export interface Question extends ModelWithDatesOrder<number> {
   correct_choices: string[];
   media: string;
   correction_sound: string;
+  correction: any[];
   sound: string;
   source: string;
   review: any;
