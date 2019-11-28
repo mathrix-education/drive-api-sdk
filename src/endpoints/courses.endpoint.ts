@@ -53,7 +53,7 @@ export class CoursesEndpoint extends Endpoint<Course> {
    * GET /courses/{courseId}/topics
    * @param courseId The course id.
    */
-  relatedTopics(courseId: string) {
+  relatedTopics(courseId: number) {
     return this.defaultRelationList(courseId, 'topics');
   }
 }
