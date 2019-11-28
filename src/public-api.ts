@@ -6,6 +6,7 @@ export * from './endpoints/questions.endpoint';
 export * from './endpoints/results.endpoint';
 export * from './endpoints/series-endpoint';
 export * from './endpoints/themes.endpoint';
+export * from './endpoints/topics.endpoint';
 export * from './endpoints/users.endpoint';
 // Modules
 export * from './drive-api-sdk.module';

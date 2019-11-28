@@ -1,7 +1,7 @@
 import {HttpClient} from '@angular/common/http';
 import {Inject, Injectable} from '@angular/core';
 import {BaseUrl, Create, Endpoint, ListOptions, ReadOptions, UpdateOptions} from '@mathrix-education/iridium';
-import {Theme} from "../models/theme";
+import {Theme} from '../models/theme';
 
 /**
  * /themes endpoint.
