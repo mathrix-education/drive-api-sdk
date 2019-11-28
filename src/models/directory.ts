@@ -2,15 +2,12 @@ import {Model} from '@mathrix-education/iridium';
 
 // tslint:disable:variable-name
 
-export type MimeType = 'application/pdf' | 'image/gif' | 'image/jpeg' | 'image/svg+xml' | 'image/png' | 'video/mp4';
 
 export interface Directory extends Model<string> {
-  type: 'file';
+  type: 'dir';
   basename: string;
   dirname: string;
-  readonly mimetype: MimeType;
+  filename: string;
   path: string;
-  readonly size_kb: string;
-  readonly timestamp: number;
   url: string;
 }
