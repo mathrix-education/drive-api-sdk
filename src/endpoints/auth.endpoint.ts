@@ -2,7 +2,7 @@ import {BaseUrl, DataResponse, Endpoint, MessageResponse} from '@mathrix-educati
 import {HttpClient} from '@angular/common/http';
 import {Inject, Injectable} from '@angular/core';
 
-type TokenDataResponse = DataResponse<{ token: string }>;
+export type TokenDataResponse = DataResponse<{ token: string }>;
 
 /**
  * /auth endpoint.
