@@ -43,7 +43,6 @@ describe('Users Endpoint', () => {
       expect(request.url).toBe(`${environment.config.baseUrl}/users/1`);
       expect(request.body.updated_at).toBeUndefined();
       expect(request.body.created_at).toBeUndefined();
-      console.log(request);
       return true;
     })
 
