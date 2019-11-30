@@ -4,7 +4,7 @@ import {AuthTokenName, BaseUrl, IridiumModule} from '@mathrix-education/iridium'
 
 
 @NgModule({
-    imports: [HttpClientModule, IridiumModule],
+    imports: [HttpClientModule, IridiumModule]
   }
 )
 

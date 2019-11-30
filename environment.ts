@@ -1,3 +1,3 @@
 export const environment = {
-  config: {baseUrl: 'https://dev.api.mathrix.fr', authTokenName: 'mathrix-admin-token'}
+  config: {baseUrl: 'https://next..mathrix.fr', authTokenName: 'mathrix-admin-token'}
 }

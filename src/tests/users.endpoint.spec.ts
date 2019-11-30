@@ -1,10 +1,11 @@
 import {TestBed} from '@angular/core/testing';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
-import {UsersEndpoint} from '../endpoints/users.endpoint';
-import {EducationAPISDKModule} from '../drive-api-sdk.module';
+import {DriveApiSdkModule} from '../drive-api-sdk.module';
 import {environment} from '../../environment';
+import {UsersEndpoint} from '../endpoints/users.endpoint';
+import {HttpRequest} from '@angular/common/http';
 
-describe('UsersEndpoint', () => {
+describe('Users Endpoint', () => {
 
   let backend;
   let usersEndpoint;
@@ -12,7 +13,7 @@ describe('UsersEndpoint', () => {
     TestBed.configureTestingModule({
       imports: [
         HttpClientTestingModule,
-        EducationAPISDKModule.withConfig(environment.config),
+        DriveApiSdkModule.withConfig(environment.config),
       ],
       providers: [UsersEndpoint]
     });
@@ -20,17 +21,32 @@ describe('UsersEndpoint', () => {
     usersEndpoint = TestBed.get(UsersEndpoint);
   });
 
-  it('DELETE /users/{userId}/cache', () => {
-    usersEndpoint.deleteCache(50).subscribe();
-    const req = backend.expectOne(`${environment.config.baseUrl}/users/50/cache`);
-    expect(req.request.method).toEqual('DELETE');
+
+  it('patch user', () => {
+    usersEndpoint.update(1,
+      {
+        id: 1,
+        password: "",
+        scopes: [],
+        first_name: 'a',
+        last_name: 'b',
+        username: 'c',
+        email: 'd@mthx.fr',
+        created_at: Date.now().toString(),
+        updated_at: Date.now().toString()
+      }).subscribe();
+
+ //   backend.expectOne(`${environment.config.baseUrl}/users/1`);
+
+    backend.expectOne((request: HttpRequest<any>) => {
+      expect(request.method).toBe('PATCH');
+      expect(request.url).toBe(`${environment.config.baseUrl}/users/1`);
+      expect(request.body.updated_at).toBeUndefined();
+      expect(request.body.created_at).toBeUndefined();
+      console.log(request);
+      return true;
+    })
+
+
   });
-
-
-  it('correct list for user', () => {
-    usersEndpoint.list({query: 'julien'}).subscribe();
-    const req = backend.expectOne(`${environment.config.baseUrl}/users?query=julien`);
-  });
-
-
 });
