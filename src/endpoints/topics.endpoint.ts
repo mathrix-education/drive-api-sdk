@@ -1,11 +1,18 @@
 import {HttpClient} from '@angular/common/http';
 import {Inject, Injectable} from '@angular/core';
-import {BaseUrl, Create, Endpoint, ListOptions, ReadOptions, UpdateOptions} from '@mathrix-education/iridium';
+import {
+  BaseUrl,
+  Create,
+  Endpoint,
+  ListOptions,
+  ReadOptions,
+  RelationListOptions,
+  UpdateOptions
+} from '@mathrix-education/iridium';
 import {Topic} from '../models/topic';
-import {Observable} from "rxjs";
-import {Course} from "../models/course";
-import {Question} from "../models/question";
-import {Theme} from "../models/theme";
+import {Course} from '../models/course';
+import {Question} from '../models/question';
+import {Theme} from '../models/theme';
 
 /**
  * /topics endpoint.
@@ -55,10 +62,11 @@ export class TopicsEndpoint extends Endpoint<Topic> {
 
   /**
    * GET /topics/{relation}/${relation}
-   * @param topicId the topic id.
-   * @param relation the relation.
+   * @param topicId The topic id.
+   * @param relation The relation.
+   * @param options The relation list options.
    */
-  related(topicId: number, relation: 'courses' | 'questions' | 'themes') {
-    return this.defaultRelationList<Course | Question | Theme>(topicId, relation);
+  related(topicId: number, relation: 'courses' | 'questions' | 'themes', options: RelationListOptions<Course | Question | Theme>) {
+    return this.defaultRelationList<Course | Question | Theme>(topicId, relation, options);
   }
 }
