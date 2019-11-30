@@ -1,5 +1,3 @@
-import {Model} from '@mathrix-education/iridium';
-
 // tslint:disable:variable-name
 
 export type MimeType = 'application/pdf' | 'image/gif' | 'image/jpeg' | 'image/svg+xml' | 'image/png' | 'video/mp4';

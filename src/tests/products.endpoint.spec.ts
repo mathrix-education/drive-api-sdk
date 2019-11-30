@@ -1,6 +1,5 @@
 import {TestBed} from '@angular/core/testing';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
-import {SeriesEndpoint} from '../endpoints/series-endpoint';
 import {EducationAPISDKModule} from '../drive-api-sdk.module';
 import {environment} from '../../environment';
 import {ProductsEndpoint} from '../endpoints/products.endpoints';

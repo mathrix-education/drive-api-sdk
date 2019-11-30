@@ -7,7 +7,6 @@ import {
   ReadOptions,
   UpdateOptions
 } from '@mathrix-education/iridium';
-import {Series} from '../models/series';
 import {HttpClient} from '@angular/common/http';
 import {Inject, Injectable} from '@angular/core';
 import {Question} from '../models/question';
