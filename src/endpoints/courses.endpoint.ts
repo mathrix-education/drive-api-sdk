@@ -2,6 +2,7 @@ import {HttpClient} from '@angular/common/http';
 import {Inject, Injectable} from '@angular/core';
 import {BaseUrl, Create, Endpoint, ListOptions, ReadOptions, UpdateOptions} from '@mathrix-education/iridium';
 import {Course} from '../models/course';
+import {Topic} from "../models/topic";
 
 /**
  * /courses endpoint.
@@ -54,6 +55,6 @@ export class CoursesEndpoint extends Endpoint<Course> {
    * @param courseId The course id.
    */
   relatedTopics(courseId: number) {
-    return this.defaultRelationList(courseId, 'topics');
+    return this.defaultRelationList<Topic>(courseId, 'topics');
   }
 }

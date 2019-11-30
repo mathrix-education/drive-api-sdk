@@ -2,6 +2,7 @@ import {HttpClient} from '@angular/common/http';
 import {Inject, Injectable} from '@angular/core';
 import {BaseUrl, Create, Endpoint, ListOptions, ReadOptions, UpdateOptions} from '@mathrix-education/iridium';
 import {Theme} from '../models/theme';
+import {Topic} from "../models/topic";
 
 /**
  * /themes endpoint.
@@ -54,6 +55,6 @@ export class ThemesEndpoint extends Endpoint<Theme> {
    * @param themeId The theme id.
    */
   relatedTopics(themeId: number) {
-    return this.defaultRelationList(themeId, 'topics');
+    return this.defaultRelationList<Topic>(themeId, 'topics');
   }
 }
