@@ -66,7 +66,7 @@ export class TopicsEndpoint extends Endpoint<Topic> {
    * @param relation The relation.
    * @param options The relation list options.
    */
-  related(topicId: number, relation: 'courses' | 'questions' | 'themes', options: RelationListOptions<Course | Question | Theme>) {
+  related(topicId: number, relation: 'courses' | 'questions' | 'themes', options?: RelationListOptions<Course | Question | Theme>) {
     return this.defaultRelationList<Course | Question | Theme>(topicId, relation, options);
   }
 }
