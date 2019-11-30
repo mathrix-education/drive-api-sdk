@@ -46,7 +46,6 @@ export class UsersEndpoint extends Endpoint<User> {
    * @param model The user.
    */
   update(userId: number, model: User) {
-    console.log(model);
     return this.defaultUpdate(userId, model);
   }
 

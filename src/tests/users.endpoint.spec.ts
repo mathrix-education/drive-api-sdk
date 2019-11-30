@@ -36,7 +36,6 @@ describe('Users Endpoint', () => {
         updated_at: Date.now().toString()
       }).subscribe();
 
- //   backend.expectOne(`${environment.config.baseUrl}/users/1`);
 
     backend.expectOne((request: HttpRequest<any>) => {
       expect(request.method).toBe('PATCH');
@@ -44,8 +43,6 @@ describe('Users Endpoint', () => {
       expect(request.body.updated_at).toBeUndefined();
       expect(request.body.created_at).toBeUndefined();
       return true;
-    })
-
-
+    });
   });
 });
