@@ -35,29 +35,37 @@ export class TopicsEndpoint extends Endpoint<Topic> {
 
   /**
    * POST /topics
-   * @param topics The topics model.
+   * @param topics The topic model.
    */
   create(topics: Create<Topic>) {
     return this.defaultCreate(topics);
   }
 
   /**
-   * GET /topics/{topicsId}
-   * @param topicsId The topics id.
-   * @param options The read topics request options.
+   * GET /topics/{topicId}
+   * @param topicId The topic id.
+   * @param options The read topic request options.
    */
-  read(topicsId: number, options?: ReadOptions<Topic>) {
-    return this.defaultRead(topicsId, options);
+  read(topicId: number, options?: ReadOptions<Topic>) {
+    return this.defaultRead(topicId, options);
   }
 
   /**
-   * PATCH /topics/{topicsId}
-   * @param topicsId The topics id.
-   * @param topics The topics model.
-   * @param options The update topics request options.
+   * PATCH /topics/{topicId}
+   * @param topicId The topic id.
+   * @param topics The topic model.
+   * @param options The update topic request options.
    */
-  update(topicsId: number, topics: Topic, options?: UpdateOptions<Topic>) {
-    return this.defaultUpdate(topicsId, topics, options);
+  update(topicId: number, topics: Topic, options?: UpdateOptions<Topic>) {
+    return this.defaultUpdate(topicId, topics, options);
+  }
+
+  /**
+   * DELETE /topcs/${topicId}
+   * @param topicId The topic id.
+   */
+  delete(topicId: number) {
+    return this.defaultDelete(topicId);
   }
 
   /**
