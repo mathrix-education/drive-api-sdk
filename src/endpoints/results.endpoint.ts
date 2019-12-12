@@ -5,7 +5,7 @@ import {Result} from '../models/result';
 
 export class ResultsEndpoint extends Endpoint<Result> {
   constructor(http: HttpClient, @Inject(BaseUrl) base: string) {
-    super(http, base, 'questions');
+    super(http, base, 'results');
   }
 
   create(result: Result): any {

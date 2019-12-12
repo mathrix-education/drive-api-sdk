@@ -1,15 +1,8 @@
-import {
-  BaseUrl,
-  Create,
-  Endpoint,
-  ListOptions,
-  PaginatedResponse,
-  ReadOptions,
-  UpdateOptions
-} from '@mathrix-education/iridium';
+import {BaseUrl, Create, Endpoint, ListOptions, ReadOptions, UpdateOptions} from '@mathrix-education/iridium';
 import {HttpClient} from '@angular/common/http';
 import {Inject, Injectable} from '@angular/core';
 import {Question} from '../models/question';
+import {Series} from '../models/series';
 
 /**
  * /questions endpoint.
@@ -17,51 +10,51 @@ import {Question} from '../models/question';
 @Injectable({
   providedIn: 'root'
 })
-export class SeriesEndpoint extends Endpoint<Question> {
+export class SeriesEndpoint extends Endpoint<Series> {
   constructor(http: HttpClient, @Inject(BaseUrl) base: string) {
-    super(http, base, 'questions');
+    super(http, base, 'series');
   }
 
   /**
    * GET /questions
    * @param options The list options.
    */
-  list(options?: ListOptions<Question>) {
+  list(options?: ListOptions<Series>) {
     return this.defaultList(options);
   }
 
   /**
    * POST /questions
-   * @param question The question model.
+   * @param series The question model.
    */
-  create(question: Create<Question>) {
-    return this.defaultCreate(question);
+  create(series: Create<Series>) {
+    return this.defaultCreate(series);
   }
 
   /**
-   * GET /questions/{questionId}
-   * @param questionId The question id.
+   * GET /questions/{series}
+   * @param seriesId The series id.
    * @param options The read question request options.
    */
-  read(questionId: number, options?: ReadOptions<Question>) {
-    return this.defaultRead(questionId, options);
+  read(seriesId: number, options?: ReadOptions<Series>) {
+    return this.defaultRead(seriesId, options);
   }
 
   /**
    * PATCH /questions/{questionId}
-   * @param questionId The question id.
-   * @param question The question model.
-   * @param options The update question request options.
+   * @param seriesId The series id.
+   * @param question The series model.
+   * @param options The update series request options.
    */
-  update(questionId: number, question: Question, options?: UpdateOptions<Question>) {
-    return this.defaultUpdate(questionId, question, options);
+  update(seriesId: number, question: Series, options?: UpdateOptions<Series>) {
+    return this.defaultUpdate(seriesId, question, options);
   }
 
   /**
-   * GET /questions/random/{count}
-   * @param count The number of questions.
+   * DELETE /series/${seriesId}
+   * @param seriesId The series id.
    */
-  random(count: number) {
-    return this.http.get<PaginatedResponse<Question>>(`${this.url}/random/${count}`);
+  delete(seriesId: number) {
+    return this.defaultDelete(seriesId);
   }
 }

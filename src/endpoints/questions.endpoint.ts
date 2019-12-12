@@ -1,7 +1,15 @@
 import {Question} from '../models/question';
 import {HttpClient} from '@angular/common/http';
 import {Inject, Injectable} from '@angular/core';
-import {BaseUrl, Create, Endpoint, ListOptions, ReadOptions, UpdateOptions} from '@mathrix-education/iridium';
+import {
+  BaseUrl,
+  Create,
+  Endpoint,
+  ListOptions,
+  PaginatedResponse,
+  ReadOptions,
+  UpdateOptions
+} from '@mathrix-education/iridium';
 
 /**
  * /questions endpoint.
@@ -47,5 +55,21 @@ export class QuestionsEndpoint extends Endpoint<Question> {
    */
   update(questionsId: number, questions: Question, options?: UpdateOptions<Question>) {
     return this.defaultUpdate(questionsId, questions, options);
+  }
+
+  /**
+   * DELETE /questions/${questionsId}
+   * @param questionsId The questions id.
+   */
+  delete(questionsId: number) {
+    return this.defaultDelete(questionsId);
+  }
+
+  /**
+   * GET /questions/random/{count}
+   * @param count The number of questions.
+   */
+  random(count: number) {
+    return this.http.get<PaginatedResponse<Question>>(`${this.url}/random/${count}`);
   }
 }

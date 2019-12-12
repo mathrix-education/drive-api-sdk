@@ -51,6 +51,14 @@ export class ThemesEndpoint extends Endpoint<Theme> {
   }
 
   /**
+   * DELETE /themes/{themeId}
+   * @param themesId The themes id.
+   */
+  delete(themesId: number) {
+    return this.defaultDelete(themesId);
+  }
+
+  /**
    * GET /themes/{themeId}/topics
    * @param themeId The theme id.
    */

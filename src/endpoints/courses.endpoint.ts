@@ -51,6 +51,14 @@ export class CoursesEndpoint extends Endpoint<Course> {
   }
 
   /**
+   * PATCH /courses/{coursesId}
+   * @param coursesId The courses id.
+   */
+  delete(coursesId: string) {
+    return this.defaultDelete(coursesId);
+  }
+
+  /**
    * GET /courses/{courseId}/topics
    * @param courseId The course id.
    */
