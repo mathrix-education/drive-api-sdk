@@ -28,10 +28,12 @@ export class FilesEndpoint {
   /**
    * @param file The file.
    * @param url The file url.
+     * @param force Force override
    */
-  create(file: File, url: string) {
+  create(file: File, url: string, force = false) {
     const formData = new FormData();
     formData.append('file', file);
+    formData.append('force', force.toString());
     return this.http.post<DataResponse<FileInterface>>(`${this.url}/${url}`, formData);
   }
 
